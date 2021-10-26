@@ -1,13 +1,14 @@
 import React from 'react'
 import HornedBeasts from './HornedBeasts.js'
 import data from '../assets/data.json'
+import { Row, Col } from 'react-bootstrap'
 
 export default class Main extends React.Component {
     render() {
       return (
-        <>
-          {data.map( element => <HornedBeasts {...element} /> )}
-        </>
+        <Row>
+            {data.map( element => <HornedBeasts {...element} /> )}
+        </Row>
       )
     }
   }
