@@ -14,8 +14,9 @@ export default class HornedBeasts extends React.Component {
 
   render() {
     return (
-      <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" 
+      <Card style={{width: '18rem', height: '30em'}}>
+          <Card.Img style={{objectFit: 'cover', height: '18em'}}
+            variant="top" 
             src={this.props.image_url}
             alt={this.props.description} 
             title={this.props.title}/>
