@@ -14,22 +14,34 @@ export default class HornedBeasts extends React.Component {
 
   render() {
     return (
-      <Card style={{width: '18rem', height: '30em'}}>
-          <Card.Img style={{objectFit: 'cover', height: '18em'}}
-            variant="top" 
-            src={this.props.image_url}
-            alt={this.props.description} 
-            title={this.props.title}/>
+      <Card style={{
+        width: '14rem',
+        padding: '0rem',
+        margin: '0.5rem'
+        }}>
+        
+        <Card.Img
+          variant="top" 
+          src={this.props.image_url}
+          alt={this.props.description} 
+          title={this.props.title}
+          style={{
+            objectFit: 'cover',
+            height: '10rem'
+          }}/>
+
         <Card.Body>
-          <Card.Title>
-            {`${this.props.title} `}
-          </Card.Title>
+          <Card.Title>{`${this.props.title} `}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
         </Card.Body>
-        <Badge onClick={this.incrementFavoritedCount}>
-          <AiFillHeart /> 
-          {` ${this.state.favoritedCount}`}
-        </Badge>
+
+        <Card.Footer>
+          <Badge onClick={this.incrementFavoritedCount}>
+            <AiFillHeart style={{verticalAlign: 'bottom'}}/> 
+            {` ${this.state.favoritedCount}`}
+          </Badge>
+        </Card.Footer>
+
       </Card>
     )
   }

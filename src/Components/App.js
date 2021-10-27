@@ -3,18 +3,16 @@ import Header from './Header.js'
 import Main from './Main.js'
 import Footer from './Footer.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <Container>
-          <Header />
-          <Main />
-          <Footer />
-        </Container>
-      </div>
+      <Container>
+        <Header />
+        <Main />
+        <Footer />
+      </Container>
     )
   }
 }
