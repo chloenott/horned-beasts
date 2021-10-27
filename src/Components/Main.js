@@ -7,7 +7,7 @@ export default class Main extends React.Component {
     render() {
       return (
           <Row>
-              {data.map( element => <HornedBeasts {...element}/> )}
+              {data.map( element => <HornedBeasts {...element}/>)}
           </Row>
       )
     }
