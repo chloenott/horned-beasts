@@ -1,13 +1,48 @@
-import React from 'react'
+import React from 'react';
+import { Badge, Card } from 'react-bootstrap';
+import { AiFillHeart } from 'react-icons/ai';
 
 export default class HornedBeasts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritedCount: 0};
+  }
+
+  incrementFavoritedCount = () => {
+    this.setState( {favoritedCount: this.state.favoritedCount + 1} );
+  }
+
   render() {
     return (
-      <>
-        <h2>{this.props.title}</h2>
-        <img src={this.props.image_url} alt={this.props.description} title={this.props.title} width="300" />
-        <p>{this.props.description}</p>
-      </>
+      <Card style={{
+        width: '14rem',
+        padding: '0rem',
+        margin: '0.5rem'
+        }}>
+        
+        <Card.Img
+          variant="top" 
+          src={this.props.image_url}
+          alt={this.props.description} 
+          title={this.props.title}
+          style={{
+            objectFit: 'cover',
+            height: '10rem'
+          }}/>
+
+        <Card.Body>
+          <Card.Title>{`${this.props.title} `}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+        </Card.Body>
+
+        <Card.Footer>
+          <Badge onClick={this.incrementFavoritedCount}>
+            <AiFillHeart style={{verticalAlign: 'bottom'}}/> 
+            {` ${this.state.favoritedCount}`}
+          </Badge>
+        </Card.Footer>
+
+      </Card>
     )
   }
 }
