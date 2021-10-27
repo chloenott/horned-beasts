@@ -22,17 +22,17 @@ export default class HornedBeasts extends React.Component {
         
         <Card.Img
           variant="top" 
-          src={this.props.image_url}
-          alt={this.props.description} 
-          title={this.props.title}
+          src={this.props.beast.image_url}
+          alt={this.props.beast.description} 
+          title={this.props.beast.title}
           style={{
             objectFit: 'cover',
             height: '10rem'
-          }}/>
+          }} onClick={() => this.props.showDetails(this.props.beast)}/>
 
         <Card.Body>
-          <Card.Title>{`${this.props.title} `}</Card.Title>
-          <Card.Text>{this.props.description}</Card.Text>
+          <Card.Title>{`${this.props.beast.title} `}</Card.Title>
+          <Card.Text>{this.props.beast.description}</Card.Text>
         </Card.Body>
 
         <Card.Footer>
