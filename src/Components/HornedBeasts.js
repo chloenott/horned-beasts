@@ -28,7 +28,8 @@ export default class HornedBeasts extends React.Component {
           style={{
             objectFit: 'cover',
             height: '10rem'
-          }} onClick={() => this.props.showDetails(this.props.beast)}/>
+          }}
+          onClick={() => this.props.showDetails(this.props.beast)}/>
 
         <Card.Body>
           <Card.Title>{`${this.props.beast.title} `}</Card.Title>
