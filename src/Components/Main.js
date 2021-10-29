@@ -15,7 +15,7 @@ export default class Main extends React.Component {
       return isNaN(selectedFilter) ? true : beast.horns === Number(selectedFilter)
     }
     let filteredBeasts = this.props.beasts.filter( filterFunc )
-    
+
     this.setState( {beasts: filteredBeasts} );
   }
 
@@ -26,7 +26,7 @@ export default class Main extends React.Component {
     
     let formOptionBuilder = (filterOption) => {
       return (
-        <option key={filterOption}value={filterOption}>
+        <option key={filterOption} value={filterOption}>
           {filterOption}
         </option>
       )
@@ -36,12 +36,14 @@ export default class Main extends React.Component {
       <>
         <FloatingLabel label="Filter by number of horns">
           <Form.Control as="select" aria-label="Label" onChange={this.filterBeastsByHorn}>
-            {filterOptions.map( formOptionBuilder )}
+            {filterOptions.map(formOptionBuilder)}
           </Form.Control>
         </FloatingLabel>
 
         <Row>
-            {this.state.beasts.map( beast => <HornedBeasts key={beast.title} beast={beast} showDetails={this.props.showDetails} />)}
+            {this.state.beasts.map( beast => {
+              return <HornedBeasts key={beast.title} beast={beast} showDetails={this.props.showDetails} />
+            })}
         </Row>
       </>
     )
