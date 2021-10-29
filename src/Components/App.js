@@ -10,17 +10,14 @@ import beasts from '../assets/data.json'
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showBeast: null,
-      beasts: beasts
-    };
+    this.state = {showBeast: null};
   }
 
   showDetails = (beast) => {
     this.setState({showBeast: beast});
   }
 
-  handleHide = () => {
+  hideDetails = () => {
     this.setState({showBeast: null});
   }
 
@@ -28,9 +25,9 @@ export default class App extends React.Component {
     return (
       <Container>
         <Header />
-        <Main beasts={this.state.beasts} showDetails={this.showDetails}/>
+        <Main beasts={beasts} showDetails={this.showDetails}/>
         <Footer />
-        <SelectedBeast beast={this.state.showBeast} handleHide={this.handleHide} />
+        <SelectedBeast beast={this.state.showBeast} handleHide={this.hideDetails} />
       </Container>
     )
   }
